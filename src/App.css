@@ -10,6 +10,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    margin: 10vh;
   }
 }
 
@@ -31,6 +32,13 @@
 .Title {
   color: #448bd4;
   font-weight: bold;
+  font-size: '20px' ;
+}
+
+.Cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
