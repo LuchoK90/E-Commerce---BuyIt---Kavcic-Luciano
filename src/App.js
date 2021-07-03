@@ -1,36 +1,36 @@
 import React from 'react';
-import logo from './ecommerceLogo.png';
 import './App.css';
-import Header from './components/header/header.js';
-import CardComponent from './components/cardComponent/cardComponent.js';
-import NavBar from './components/navBar/navBar.js';
-import ItemCount from './components/itemCount/itemCount.js';
-import {Items} from './components/itemList/items.js';
-
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Tecnologia from './tecnologia';
+import Musica from './musica';
+import Deportes from './deportes';
+import Home from './home';
+import Detalle from './detalle';
 
 class App extends React.Component{
 
-  constructor(){
-    super();
-    this.state = {
-      name: "Eduardo"
-    };
-  }
-
-  componentDidMount(){
-  {/*   setTimeout(() => { this.setState ({name: "Daniel"});}, 2000); */}
-  }
-
   render(){
     return <div className="App">
-     
+
+<Router>
+		 {/*	<div className='App'>
       <Header />
-      <NavBar />
-        <img src={logo} className="App-logo" alt="logo" />
+      <NavBar /> */}
+				<Switch>
+				<Route path='/' exact component={Home} />
+					<Route path='/tecnologia' component={Tecnologia} />
+					<Route path='/musica' exact component={Musica} />
+          <Route path='/deportes' component={Deportes} />
+          <Route path='/detalle/:id' component={Detalle} />
+				</Switch>
+		{/*	</div> */}
+		</Router>
+     
+    
+     {/*    <img src={logo} className="App-logo" alt="logo" />
         <p className="Title" style={{fontSize:'38px'}}>
         BUY IT!
-        </p>
+        </p> */}
        {/*  <div className="Cards">
         <CardComponent  name={"Luciano"} description={"Alumno del curso de React JS"} date={"Mayo 2021"} img={"https://react.semantic-ui.com/images/avatar/large/matthew.png"}/>
         <CardComponent  name={"Francisco"} description={"Alumno del curso de React JS"} date={"Junio 2021"} img={"https://react.semantic-ui.com/images/avatar/large/matthew.png"}/>
@@ -41,10 +41,10 @@ class App extends React.Component{
        {/*  {this.state.name} */}
         </p>
 
-     <Items />
+    {/* <Items />
 
         <br></br>
-        <ItemCount /> <br></br>
+        <ItemCount /> <br></br> */}
     </div>
     }
 }
